@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+}
+#subnav {
+    border: none;
+    display: flex;
+    gap: 0.3rem;
+}
+#subnav input[type="text"]{
+    width: 80px;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: width 0.1s;
+}
+#subnav input[type="text"]:focus{
+    width: 100px;
+}
+#subnav button{
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+#hymnbody{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 2px;
+}
+#hymn1,#hymn2{
+    border: none;
+}
