@@ -1,25 +1,21 @@
-const getHymn = document.getElementById("hymnbody");
+const hymnBodies = document.querySelectorAll(".hymnbody");
+const getHymns=document.getElementById("hymns");
+hymnBodies.forEach((hymnBody) => {
+  hymnBody.addEventListener("click", function (event) {
+    const hymnId = event.currentTarget.dataset.id;
 
-getHymn.addEventListener("click", function () {
-    // Make a fetch request to retrieve the data for the hymns
-    fetch("connection.php")
-        .then(function(response) {
-            // Parse the response as JSON
-            return response.json();
+    fetch(`connection.php?id=${hymnId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // data.title;
+    data.forEach(function(number){
+        console.log(number);
 
-        })
-        .then(function(data) {
-            // Output the data to the console for testing
-      const hymnData= document.getElementById("hymnData");
-            let newContent = " ";
-      data.forEach(function(hymn) {
-        newContent += `<div>${hymn.title} - ${hymn.content}</div>`;
-
-    });
-getHymn.innerHTML = newContent;
-
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
+    })
+        
+       
+      })
+      .catch((error) => console.log(error));
+  });
 });
