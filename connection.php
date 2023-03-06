@@ -18,6 +18,7 @@ $sql = "SELECT * FROM hymns WHERE id =$hymnId";
 $result = mysqli_query($conn, $sql);
 
 
+
 if (!$result) {
     die("Error retrieving data: " . mysqli_error($conn));
 }

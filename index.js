@@ -23,3 +23,14 @@ hymnBodies.forEach((hymnBody) => {
       .catch((error) => console.log(error));
   });
 });
+
+const footer=document.getElementById("footer");
+window.onscroll = function() {
+  if(window.scrollY>100){
+    footer.style.top="0px";
+  }
+  else  {
+    // window.scrollTo(0, 0);
+    footer.style.bottom="0px";
+  }
+}

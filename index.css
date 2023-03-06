@@ -16,18 +16,49 @@ nav{
     gap: 0.3rem;
 }
 #subnav input[type="text"]{
-    width: 80px;
-    padding: 2px;
+    width: 100px;
+    padding: 3px;
     text-align: center;
     border: 1px solid;
     border-radius: 5px;
     transition: width 0.1s;
 }
 #subnav input[type="text"]:focus{
-    width: 100px;
+    width: 120px;
 }
 #subnav button{
     padding: 2px;
     border-radius: 5px;
     border: 1px solid;
+
+}
+#hymns {
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+    font-size: small;
+    padding: 5px;
+    padding-top: 8px;
+font-weight: bold;
+min-height: calc(100% -100px);
+color: purple;
+}
+#footer{
+   
+    bottom: 5px;
+    /* height: 10px; */
+    width: 100%;
+position: fixed;
+border: 1px solid;
+padding: 5px;
+}
+#footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ z-index: 1;   
+ background-color: white;
+}
+#footer div a{
+    text-decoration: none;
 }
