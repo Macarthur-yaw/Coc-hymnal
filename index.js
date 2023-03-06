@@ -9,10 +9,14 @@ hymnBodies.forEach((hymnBody) => {
       .then((data) => {
         console.log(data);
         // data.title;
-    data.forEach(function(number){
-        console.log(number);
+        let hymnHtml= " ";
+    data.forEach(function(hymn){
+        hymnHtml += `<h3>${hymn.title}</h3><p>${hymn.content}</p>`;
+
 
     })
+    getHymns.innerHTML=hymnHtml;
+
         
        
       })

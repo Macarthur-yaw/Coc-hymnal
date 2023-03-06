@@ -1,10 +1,11 @@
 <?php
+header("Cache-Control: no-cache, must-revalidate");
 $servername = "localhost";
 $username = "hymns";
 $password = "macazzy@8";
 $dbname = "Hymns";
 
-// Create a connection to the database
+
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
@@ -33,6 +34,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 header("Content-type: application/json");
 echo json_encode($data);
 
-// Close the database connection
+
 mysqli_close($conn);
 ?>

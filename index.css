@@ -31,12 +31,3 @@ nav{
     border-radius: 5px;
     border: 1px solid;
 }
-#hymnbody{
-    display: flex;
-    flex-direction: column;
-    border: none;
-    padding: 2px;
-}
-#hymn1,#hymn2{
-    border: none;
-}
