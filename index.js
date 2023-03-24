@@ -7,15 +7,18 @@ hymnBodies.forEach((hymnBody) => {
     fetch(`connection.php?id=${hymnId}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        
         // data.title;
         let hymnHtml= " ";
     data.forEach(function(hymn){
-        hymnHtml += `<h3>${hymn.title}</h3><p>${hymn.content}</p>`;
+        hymnHtml += `<h3 class="title">${hymn.title}</h3>`;
+        hymnHtml+=`<p class="content">${hymn.content}</p>`;
 
 
     })
     getHymns.innerHTML=hymnHtml;
+    getHymns.style.display="block";
+
 
         
        
@@ -23,14 +26,38 @@ hymnBodies.forEach((hymnBody) => {
       .catch((error) => console.log(error));
   });
 });
+const buttons = document.getElementById("buttons"); //name of the button
+const getInput=document.getElementById("search");//get the user input
 
-const footer=document.getElementById("footer");
-window.onscroll = function() {
-  if(window.scrollY>100){
-    footer.style.top="0px";
+buttons.addEventListener("click",function (){
+const query=getInput.value.toLowerCase().trim();
+
+//search-form
+//search
+hymnBodies.forEach((hymnBody) => {
+  const hymnTitle = hymnBody.querySelector("#hymnheader");
+  const hymnContent = hymnBody.querySelector(".hymnnum");
+  console.log(hymnTitle);
+  console.log(hymnContent);
+  if (hymnTitle && hymnTitle.textContent.toLowerCase().includes(query) || 
+      hymnContent && hymnContent.textContent.toLowerCase().includes(query)) {
+    hymnBody.style.display = "block";
+  } else {
+    hymnBody.style.display = "none";
   }
-  else  {
-    // window.scrollTo(0, 0);
-    footer.style.bottom="0px";
-  }
+});
+
+});
+
+//storing the favorites songs 
+
+const getFav=document.getElementById("favorite");
+
+getFav.addEventListener("click", (event)=>{
+const curFav= event.currentTarget.dataset.id;
+
+
+});
+function showFav(){
+
 }
